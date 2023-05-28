@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-void main() => runApp(const MyApp());
-
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class PharmacySearch extends StatefulWidget {
+  const PharmacySearch({Key? key}) : super(key: key);
 
   @override
-  _MyAppState createState() => _MyAppState();
+  _PharmacySearchState createState() => _PharmacySearchState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _PharmacySearchState extends State<PharmacySearch> {
   late GoogleMapController mapController;
 
-  final LatLng _center = const LatLng(45.521563, -122.677433);
+  final LatLng _center = const LatLng(37.521563, 127.677433);
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -24,17 +22,25 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Maps Sample App'),
+          title: const Text('Pharmacy Map'),
           backgroundColor: Colors.green[700],
         ),
         body: GoogleMap(
+          
+        mapType: MapType.normal, //지도 유형 설정
           onMapCreated: _onMapCreated,
           initialCameraPosition: CameraPosition(
             target: _center,
             zoom: 11.0,
           ),
         ),
+        floatingActionButton: FloatingActionButton.extended(onPressed: 
+        _goToMain(), label: Text('Main')),
       ),
     );
   }
+  
+  _goToMain() {  Navigator.pushNamed(context, '/');}
 }
+
+
