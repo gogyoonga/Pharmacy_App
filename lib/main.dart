@@ -1,14 +1,17 @@
-import 'package:drug_app/pharmacy_home.dart';
-import 'package:drug_app/pharmacy_main.dart';
+
 import 'package:drug_app/pharmacy_search.dart';
+import 'package:drug_app/pharmacy_search_screen.dart';
 import 'package:drug_app/search_screen.dart';
 import 'package:drug_app/warning.dart';
 import 'package:flutter/material.dart';
 import 'package:drug_app/mouth_drug_screen.dart';
 
+
 import 'cold_diagnose_screen.dart';
 import 'cold_drug_screen.dart';
 import 'etc_screen.dart';
+import 'pharmacy_app.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -25,8 +28,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       initialRoute: '/',
+       home: const PharmacyApp(),
       routes: {
-        '/': (context) => const HomeScreen(),
         '/symptom': (context) => const SymptomSearch(),
         '/symptom/cold_diagnose': (context) => const ColdDiagnoseScreen(),
         '/symptom/cold_diagnose/cold_drug': (context) => const ColdDrugScreen(),
@@ -34,8 +37,8 @@ class MyApp extends StatelessWidget {
         '/symptom/etc/warning': (context) => const Warning(),
         '/symptom/etc/mouth_drug_screen': (context) => const MouthDrugScreen(),
         '/pharmacy_search': (context) => const PharmacySearch(),
-        '/pharmacy':(context) => const NavigationBarApp(),
-        '/pharmacy/pharmacy_main':(context) => const PharmacyMain(),
+        '/pharmacy/pharmacy_search_screen': (context) =>
+            const PharmacySearchScreen(),
       },
 
     );
@@ -89,7 +92,7 @@ class HomeScreen extends StatelessWidget {
               child:
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/pharmacy');
+                Navigator.pushNamed(context, '/bottom_navigation');
               },
               child: const Text('약국검색'),
             ),),

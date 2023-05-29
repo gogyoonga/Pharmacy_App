@@ -19,6 +19,8 @@ class _PharmacySearchState extends State<PharmacySearch> {
 
   @override
   Widget build(BuildContext context) {
+    Container(width: MediaQuery.of(context).size.width,
+    height: MediaQuery.of(context).size.height,);
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
