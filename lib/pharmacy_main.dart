@@ -8,6 +8,9 @@ class PharmacyMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
+      
     );
+    
   }
 }
+

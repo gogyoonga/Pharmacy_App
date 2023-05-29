@@ -20,7 +20,10 @@ class _PharmacySearchScreenState extends State<PharmacySearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('약국 검색'),
+        actions: [IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: (){ },),],
+      title: const Text('약국 검색'),
       ),
       body:
       SingleChildScrollView(

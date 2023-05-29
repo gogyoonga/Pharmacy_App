@@ -1,12 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:drug_app/bottom_navigation.dart';
 import 'package:drug_app/tab_item.dart';
 import 'package:drug_app/pharmacy_search_screen.dart';
 import 'package:drug_app/pharmacy_search.dart';
 
-void main() {
-  runApp(PharmacyApp());
-}
+
 
 class PharmacyApp extends StatefulWidget {
   const PharmacyApp({Key? key}) : super(key: key);
@@ -69,6 +68,7 @@ class PharmacyAppState extends State<PharmacyApp> {
         ),
       ),
       routes: {
+        
         '/pharmacy_search_screen': (context) => const PharmacySearchScreen(),
         '/pharmacy_search': (context) => const PharmacySearch(),
       },
@@ -95,7 +95,7 @@ class PharmacyAppState extends State<PharmacyApp> {
   } else if (tabItem == TabItem.map) {
     return const PharmacySearch();
   } else if (tabItem == TabItem.info) {
-    return Container(); // 원하는 화면 위젯으로 대체하세요
+    return const PharmacySearch(); // 원하는 화면 위젯으로 대체하세요
   }
 
   return Container(); // 기본적으로 Container 또는 다른 위젯을 반환합니다.
