@@ -31,7 +31,7 @@ class _PharmacySearchState extends State<PharmacySearch> {
           onMapCreated: _onMapCreated,
           initialCameraPosition: CameraPosition(
             target: _center,
-            zoom: 15.0,
+            zoom: 20.0,
           ),
         ),
         

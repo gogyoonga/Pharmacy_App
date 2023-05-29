@@ -1,3 +1,5 @@
+import 'package:drug_app/pharmacy_home.dart';
+import 'package:drug_app/pharmacy_main.dart';
 import 'package:drug_app/pharmacy_search.dart';
 import 'package:drug_app/search_screen.dart';
 import 'package:drug_app/warning.dart';
@@ -32,6 +34,8 @@ class MyApp extends StatelessWidget {
         '/symptom/etc/warning': (context) => const Warning(),
         '/symptom/etc/mouth_drug_screen': (context) => const MouthDrugScreen(),
         '/pharmacy_search': (context) => const PharmacySearch(),
+        '/pharmacy':(context) => const NavigationBarApp(),
+        '/pharmacy/pharmacy_main':(context) => const PharmacyMain(),
       },
 
     );
@@ -85,7 +89,7 @@ class HomeScreen extends StatelessWidget {
               child:
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/pharmacy_search');
+                Navigator.pushNamed(context, '/pharmacy');
               },
               child: const Text('약국검색'),
             ),),
