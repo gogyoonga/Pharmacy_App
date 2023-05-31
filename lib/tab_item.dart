@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'cold_drug_screen.dart';
-import 'google_map_screen.dart';
+import 'pharmacy_search.dart';
 import 'pharmacy_search_screen.dart';
 
 enum TabItem { main, map, info, home }

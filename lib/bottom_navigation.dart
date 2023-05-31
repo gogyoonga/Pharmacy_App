@@ -4,7 +4,7 @@ import 'navbar_items.dart';
 import 'tab_item.dart';
 
 class BottomNavigation extends StatelessWidget {
-  BottomNavigation({
+  const BottomNavigation({super.key, 
     required this.currentTab, 
     required this.onSelectTab, 
     required List<TabItem> items});
