@@ -1,3 +1,5 @@
+import java.util.Properties
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -24,6 +26,7 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin:  'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 
 android {
     namespace "com.example.drug_app"
@@ -60,6 +63,19 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
         }
+
+    }
+    flavorDimensions "tier"
+    productFlavors {
+        free {
+            dimension "tier"
+            applicationId 'com.example.myapp.free'
+        }
+
+        paid {
+            dimension "tier"
+            applicationId 'com.example.myapp.paid'
+        }
     }
 }
 
@@ -72,4 +88,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10"
     implementation 'com.google.android.gms:play-services-location:18.1.0'
     implementation 'com.google.android.gms:play-services-maps:18.0.0'
+
 }
